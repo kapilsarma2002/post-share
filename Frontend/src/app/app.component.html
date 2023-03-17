@@ -1,0 +1,59 @@
+<div class="main">
+    <!-- Auth Page -->
+  <div *ngIf="!isLoggedIn; else homeBlock">
+    <a>
+      <app-login [isLoggedIn]="isLoggedIn" (getAuthChange)="isLoggedIn=$event"></app-login>
+    </a>
+  </div>
+
+  <!-- Home Page -->
+  <div>
+    <ng-template #homeBlock>
+      
+      <!-- nav-bar -->
+      <mat-toolbar class="navBar">
+        <div>
+          <span class="navBarItem leftNav">
+            <a (click)="toggleComp('home')" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page"> Home </a>
+          </span>
+          <span class="navBarItem leftNav">
+            <a (click)="toggleComp('posts')" routerLink="/posts" routerLinkActive="active" ariaCurrentWhenActive="page"> My Posts </a>
+          </span>
+          <span class="navBarItem leftNav">
+            <a (click)="toggleComp('users')" routerLink="/users" routerLinkActive="active" ariaCurrentWhenActive="page"> Users </a>  
+          </span>
+        </div>
+        <span class="example-spacer"></span>
+    
+        <div class="navBarItem postButton">
+          <div>
+            <a (click)="toggleComp('post')" routerLink="/post" routerLinkActive="active" ariaCurrentWhenActive="page"> Post </a>
+          </div>
+          <!-- <mat-icon>send</mat-icon> -->
+        </div>
+        <div class="signout navBarItem"
+          routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page"
+          (click)="signOut()"
+        >Sign out</div>
+      </mat-toolbar>
+
+      <!-- rest of the page -->
+      <div [ngSwitch]="curComp">
+        <div *ngSwitchCase="'home'">
+          <app-home [posts]="Posts" [userPostMap]="userPostMap"></app-home>
+        </div>
+        <div *ngSwitchCase="'posts'">
+          <app-my-posts [posts]="Posts" [id]="id" [userPostMap]="userPostMap"></app-my-posts>
+        </div>
+        <div *ngSwitchCase="'users'">
+          <app-users></app-users>
+        </div>
+        <div *ngSwitchCase="'post'">
+          <app-post></app-post>
+        </div>
+      </div>
+
+    </ng-template>
+  </div>
+
+</div>

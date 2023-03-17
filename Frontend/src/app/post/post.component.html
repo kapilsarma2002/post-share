@@ -1,0 +1,33 @@
+<div class="post">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+
+    <div class="postFlex">
+      <label for="title"> Title : </label>
+      <input id="title" type="text" formControlName="title" required>
+    
+      <label for="content">Description : </label>
+      <textarea 
+        id="content" 
+        type="text" 
+        formControlName="content"
+        rows="25"
+        columns="10" 
+        required
+      ></textarea>
+    </div>  
+  
+    <!-- <p>Complete the form to enable button.</p> -->
+    <div class="submitButton">
+      <button type="submit" [disabled]="!postForm.valid">Submit</button>
+    </div>
+
+  </form>
+  
+  <!-- <hr>
+  
+  <p>Form Value: {{ postForm.value | json }}</p>
+  
+  <p>Form Status: {{ postForm.status }}</p> -->
+  
+  <!-- <button type="button" (click)="updateProfile()">Update Profile</button> -->
+</div>

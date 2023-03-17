@@ -1,0 +1,113 @@
+.posts {
+  display: flex;
+  height: 100%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.heading {
+  padding-left: 40px;
+  padding-top: 40px;
+  font-size: 3rem;
+}
+
+.title {
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: small;
+}
+
+.desc {
+  font-size: medium;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 900px;
+  max-width: 1000px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+  transform: scale(1.008);
+
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.header-image {
+  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+  background-image: url('https://i.stack.imgur.com/34AD2.jpg');
+  background-size: cover;
+}
+
+mat-icon {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.title {
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: small;
+}
+
+.name {
+  font-size: large;
+}
+
+.desc {
+  font-size:medium;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.like {
+  cursor: pointer;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding-right: 30px;
+
+}
+
+.like:hover {
+  transform: scale(1.11);
+}
+
+.liked {
+  cursor: pointer;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding-right: 30px;
+  color: blue;
+}
+
+.liked:hover {
+  transform: scale(1.11);
+}
+
+
+
+
+
+
+

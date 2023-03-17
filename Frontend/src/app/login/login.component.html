@@ -1,0 +1,32 @@
+<div class="master">
+  <h1 *ngIf="IsSignInComp == true; else elseBlock">Signin</h1>
+  <ng-template #elseBlock>
+    <h1>Signup</h1>
+  </ng-template>
+  <form>
+    <div *ngIf="IsSignInComp == false" class="row">
+      <label>Name:</label> <input [(ngModel)]="form.name" name="name" size="30" type="text" placeholder="Name"/>
+    </div>
+    <div class="row">
+      <label>Email:</label> <input [(ngModel)]="form.email" name="email" size="30" type="email" placeholder="Email"/>
+    </div>
+    <div class="row">
+      <label>Password:</label> <input [(ngModel)]="form.password" name="password" size="30" type="password" placeholder="Password"/>
+    </div>
+    <a *ngIf="IsSignInComp==false; else signInElse" class="toggle" (click)="toggle()"
+      routerLink="/signin" routerLinkActive="active" ariaCurrentWhenActive="page"
+    >
+      Already have an account? Click Here to Sign in!
+    </a>
+
+    <ng-template #signInElse>
+      <a (click)="toggle()" class="toggle"
+      routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page"
+      >
+        Do not have an account? Click Here to Sign up!
+      </a>
+    </ng-template>
+
+    <button class="submitButton" (click)="submit()">Submit</button>
+  </form>
+</div>
